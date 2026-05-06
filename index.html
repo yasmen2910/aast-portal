@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الطالب | الأكاديمية العربية</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: white; width: 90%; max-width: 400px; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
+        .header-logo { width: 80px; margin-bottom: 20px; }
+        h2 { color: #004080; margin-bottom: 25px; font-size: 22px; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #f58220; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; margin-top: 10px; }
+        .result-screen { display: none; width: 100%; max-width: 800px; background: white; padding: 20px; border-radius: 12px; }
+        .student-info { background: #004080; color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: right; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
+        th, td { border: 1px solid #eee; padding: 12px; text-align: center; }
+        th { background: #f8f9fa; color: #555; }
+        .gpa-card { background: #f58220; color: white; padding: 20px; border-radius: 10px; margin-top: 20px; font-size: 24px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="loginPage" class="container">
+        <img src="https://aast.edu/ar/images/logo.png" class="header-logo" alt="AAST">
+        <h2>دخول الطلاب</h2>
+        <input type="text" id="user" placeholder="اسم المستخدم">
+        <input type="password" id="pass" placeholder="كلمة المرور">
+        <button onclick="login()">دخول</button>
+    </div>
+
+    <div id="resultPage" class="result-screen">
+        <div class="student-info">
+            <p><strong>مرحباً بك:</strong> محمد عتيق</p>
+            <p><strong>الفصل الدراسي:</strong> سبتمبر 2025</p>
+        </div>
+        
+        <h3>نتائج المواد الدراسي</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>كود المادة</th>
+                    <th>اسم المادة</th>
+                    <th>التقدير</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>IM747</td><td>إدارة الجودة</td><td>A</td></tr>
+                <tr><td>IM761E</td><td>إدارة موارد المشاريع</td><td>B+</td></tr>
+                <tr><td>CS102</td><td>برمجة الحاسب</td><td>A-</td></tr>
+            </tbody>
+        </table>
+
+        <div class="gpa-card">المعدل التراكمي (GPA): 3.40</div>
+    </div>
+
+    <script>
+        function login() {
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+
+            // عدل اسم المستخدم وكلمة المرور هنا
+            if (u === "atiq" && p === "12345") {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('resultPage').style.display = 'block';
+                document.body.style.alignItems = 'flex-start';
+                document.body.style.padding = '20px';
+            } else {
+                alert("بيانات الدخول غير صحيحة!");
+            }
+        }
+    </script>
+</body>
+</html>
